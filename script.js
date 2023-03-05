@@ -219,7 +219,32 @@ async function fetchMealById(mealId) {
 async function generateRecipe(e) {
   const mealId = e.target.closest(".recipe-card-container").id;
   const recipeInformation = await fetchMealById(mealId);
-  console.log(recipeInformation);
+  const recipeIngredients = filterIngredients(recipeInformation);
+  const recipeMeasures = filterMeasurments(recipeInformation);
+
+  // LEARN THIS LATER
+  let ingredientsHtml = "";
+  const keys = Object.keys(recipeIngredients);
+  for (let i = 0; i < keys.length; i++) {
+    const ingredientKey = keys[i];
+    const ingredientValue = recipeIngredients[ingredientKey];
+    const measureKey = `strMeasure${i + 1}`;
+    const measureValue = recipeMeasures[measureKey];
+
+    ingredientsHtml += `
+    <div class="ingredient-wrapper">
+      <div class="ingredient-image">
+        <img src="https://www.themealdb.com/images/ingredients/${ingredientValue}-Small.png" alt="${ingredientValue}" />
+      </div>
+      <div class="ingredient-text">
+        <h6>${measureValue} ${ingredientValue}</h6>
+      </div>
+    </div>
+
+    `;
+  }
+  // LEARN THIS LATER END
+
   const recipeHtml = `<div class="recipe-display-window">
   <div class="recipe-title">
     <h2>${recipeInformation.strMeal}</h2>
@@ -254,286 +279,7 @@ async function generateRecipe(e) {
         <div class="recipe-ingredients-wrapper">
           <div class="ingredients-title"><h5>Ingredients</h5></div>
           <div class="ingredients-container">
-          
-            <!-- Single Ingredient 1 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient1
-                }-Small.png" alt="${recipeInformation.strIngredient1}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure1} ${
-    recipeInformation.strIngredient1
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 2 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient2
-                }-Small.png" alt="${recipeInformation.strIngredient2}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure2} ${
-    recipeInformation.strIngredient2
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 3 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient3
-                }-Small.png" alt="${recipeInformation.strIngredient3}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure3} ${
-    recipeInformation.strIngredient3
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 4 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient4
-                }-Small.png" alt="${recipeInformation.strIngredient4}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure4} ${
-    recipeInformation.strIngredient4
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 5 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient5
-                }-Small.png" alt="${recipeInformation.strIngredient5}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure5} ${
-    recipeInformation.strIngredient5
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 6 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient6
-                }-Small.png" alt="${recipeInformation.strIngredient6}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure6} ${
-    recipeInformation.strIngredient6
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 7 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient7
-                }-Small.png" alt="${recipeInformation.strIngredient7}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure7} ${
-    recipeInformation.strIngredient7
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 8 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient8
-                }-Small.png" alt="${recipeInformation.strIngredient8}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure8} ${
-    recipeInformation.strIngredient8
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 9 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient9
-                }-Small.png" alt="${recipeInformation.strIngredient9}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure9} ${
-    recipeInformation.strIngredient9
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 10 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient10
-                }-Small.png" alt="${recipeInformation.strIngredient10}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure10} ${
-    recipeInformation.strIngredient10
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 11 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient11
-                }-Small.png" alt="${recipeInformation.strIngredient11}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure11} ${
-    recipeInformation.strIngredient11
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 12 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient12
-                }-Small.png" alt="${recipeInformation.strIngredient12}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure12} ${
-    recipeInformation.strIngredient12
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 13 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient13
-                }-Small.png" alt="${recipeInformation.strIngredient13}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure13} ${
-    recipeInformation.strIngredient13
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 14 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient14
-                }-Small.png" alt="${recipeInformation.strIngredient14}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure14} ${
-    recipeInformation.strIngredient14
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 15 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient15
-                }-Small.png" alt="${recipeInformation.strIngredient15}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure15} ${
-    recipeInformation.strIngredient15
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 16 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient16
-                }-Small.png" alt="${recipeInformation.strIngredient16}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure16} ${
-    recipeInformation.strIngredient16
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 17 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient17
-                }-Small.png" alt="${recipeInformation.strIngredient17}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure17} ${
-    recipeInformation.strIngredient17
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 18 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient18
-                }-Small.png" alt="${recipeInformation.strIngredient18}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure18} ${
-    recipeInformation.strIngredient18
-  }</h6>
-              </div>
-            </div>
-          
-            <!-- Single Ingredient 19 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient19
-                }-Small.png" alt="${recipeInformation.strIngredient19}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure19} ${
-    recipeInformation.strIngredient19
-  }</h6>
-              </div>
-            </div>
-
-            <!-- Single Ingredient 20 -->
-            <div class="ingredient-wrapper">
-              <div class="ingredient-image">
-                <img src="https://www.themealdb.com/images/ingredients/${
-                  recipeInformation.strIngredient20
-                }-Small.png" alt="${recipeInformation.strIngredient20}" />
-              </div>
-              <div class="ingredient-text">
-                <h6>${recipeInformation.strMeasure20} ${
-    recipeInformation.strIngredient20
-  }</h6>
-              </div>
-            </div>
+              ${ingredientsHtml}
           </div>
         </div>
 
@@ -556,4 +302,49 @@ async function generateRecipe(e) {
 function displayRecipe(recipeHtml) {
   const recipeScrollWindow = document.querySelector(".recipe-scroll-window");
   recipeScrollWindow.innerHTML = recipeHtml;
+}
+
+// helper functions
+function filterIngredients(recipe) {
+  const ingredients = {};
+  // filtered out to have ingredient key-value-pairs
+  for (const key in recipe) {
+    const value = recipe[key];
+    if (key.includes("strIngredient")) {
+      ingredients[key] = value;
+    }
+  }
+
+  const filteredIngredients = {};
+
+  for (const key in ingredients) {
+    const value = ingredients[key];
+    if (value !== null && value !== "") {
+      filteredIngredients[key] = value;
+    }
+  }
+
+  return filteredIngredients;
+}
+
+function filterMeasurments(recipe) {
+  const measures = {};
+  // filtered out to have ingredient key-value-pairs
+  for (const key in recipe) {
+    const value = recipe[key];
+    if (key.includes("strMeasure")) {
+      measures[key] = value;
+    }
+  }
+
+  const filteredMeasures = {};
+
+  for (const key in measures) {
+    const value = measures[key];
+    if (value !== null && value !== "") {
+      filteredMeasures[key] = value;
+    }
+  }
+
+  return filteredMeasures;
 }
