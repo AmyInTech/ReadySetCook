@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./img/icon-img.png" />
+    <title>Ready Set Cook</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img
+            src="./img/cooking-logo.svg"
+            alt="Ready Set Cook logo"
+            class="nav-img"
+          />
+          <a href="#home-section" class="logo-text">Ready Set Cook</a>
+        </div>
+        <div class="nav-right">
+          <div class="social-media-icons-container">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-square-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+          </div>
+          <div class="nav-buttons">
+            <a href="#home-section" id="home" class="selected-section">HOME</a>
+            <a href="#what-we-do-section" id="whatwedo"> WHAT WE DO</a>
+            <a href="#recipes-section" id="recipes">RECIPES</a>
+            <a href="#about-us-section" id="aboutus">ABOUT US</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home-section">
+      <div class="home-container">
+        <div class="home-img-container">
+          <img
+            src="./img/home-section-chef.svg"
+            alt="Chef"
+            class="home-chef-img"
+          />
+        </div>
+        <div class="home-text-container">
+          <h1>Need food ideas and recipes?</h1>
+          <h2>Ready Set Cook is here to help!</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do -->
+    <section id="what-we-do-section">
+      <div class="wwd-container">
+        <div class="section-heading">What We Do</div>
+        <div class="section-subheading">
+          <h3>
+            Recipes, Ingredients, & Instructions <br />to help with your busy
+            schedule
+          </h3>
+        </div>
+        <div class="wwd-content">
+          <div class="wwd-text-content-container">
+            <h4>
+              Welcome to <span>Ready Set Cook</span>, an open-sourced database
+              of recipes from around the world. For your convience, we provide
+              recipes by ingredients, countries, and name.
+            </h4>
+            <p>
+              Figuring out what to eat is a full time job. The entire process of
+              making a meal come to life can be incredibly frustrating. That's
+              why Ready Set Cook is ready to provide delicious ideas, recipes,
+              ingredients, and instructions. Whether you are cooking for
+              yourself or sharing a meal with your loved ones, we are happy to
+              assist you in the journey of bringing a delicious and nutritious
+              meal to the table with the most ease possible.
+            </p>
+            <div class="wwd-buttons">
+              <a href="#recipes-section" class="get-started-btn"
+                >Let's Get Started</a
+              >
+              <a href="#about-us-section" class="about-us-btn"
+                >Learn More About Us</a
+              >
+            </div>
+          </div>
+          <div class="wwd-img-container">
+            <img src="./img/what-we-do-section-ideas.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipes -->
+    <section id="recipes-section">
+      <div class="recipes-container">
+        <div class="section-heading">Browse for Recipes</div>
+        <div class="recipes-interaction-window">
+          <div class="recipes-content-wrapper">
+            <!-- Left Side Nav Bar -->
+            <div class="side-nav-container">
+              <h5>Categories</h5>
+              <div class="side-nav-btns-container">
+                <div>
+                  <button id="starter-btn" class="selected-category">
+                    <i class="fa-solid fa-bread-slice"></i>Appetizers
+                  </button>
+                </div>
+                <div>
+                  <button id="breakfast-btn">
+                    <i class="fa-solid fa-egg"></i>Breakfast
+                  </button>
+                </div>
+                <div>
+                  <button id="dessert-btn">
+                    <i class="fa-solid fa-ice-cream"></i>Desserts
+                  </button>
+                </div>
+                <div>
+                  <button id="pasta-btn">
+                    <i class="fa-solid fa-plate-wheat"></i>Pasta
+                  </button>
+                </div>
+                <div>
+                  <button id="proteins-btn">
+                    <i class="fa-solid fa-drumstick-bite"></i>Proteins
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                  </button>
+                </div>
+                <div class="proteins-drop-down-container hidden">
+                  <button id="beef-btn">
+                    <i class="fa-solid fa-cow"></i>Beef
+                  </button>
+                  <button id="chicken-btn">
+                    <i class="fa-solid fa-drumstick-bite"></i>
+                    Chicken
+                  </button>
+                  <button id="goat-btn">
+                    <i class="fa-solid fa-bone"></i>Goat
+                  </button>
+                  <button id="lamb-btn">
+                    <i class="fa-solid fa-bone"></i>Lamb
+                  </button>
+                  <button id="pork-btn">
+                    <i class="fa-solid fa-bacon"></i>Pork
+                  </button>
+                  <button id="seafood-btn">
+                    <i class="fa-solid fa-fish"></i>
+                    Seafood
+                  </button>
+                </div>
+                <div>
+                  <button id="side-btn">
+                    <i class="fa-solid fa-bowl-food"></i>Sides
+                  </button>
+                </div>
+                <div>
+                  <button id="vegan-btn">
+                    <i class="fa-solid fa-seedling"></i>Vegan
+                  </button>
+                </div>
+                <div>
+                  <button id="vegetarian-btn">
+                    <i class="fa-solid fa-carrot"></i>Vegetarian
+                  </button>
+                </div>
+                <div>
+                  <button id="miscellaneous-btn">
+                    <i class="fa-solid fa-pizza-slice"></i>Miscellaneous
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side Recipes Search -->
+            <div class="recipes-search-window">
+              <div class="recipe-cards-wrapper">
+                <!-- Card -->
+                <!-- <div class="recipe-card-container" id="52772"> -->
+                <!-- Image -->
+                <!-- <div class="recipe-card-img">
+                    <img src="./img/french-omelete.jpeg" />
+                  </div>
+                  <div class="recipe-card-bottom"> -->
+                <!-- Title -->
+                <!-- <div class="recipe-title">
+                      <h5>Recipe Name</h5>
+                    </div> 
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+            <!-- Right Side Single Recipe -->
+            <div class="recipe-scroll-window">
+              <div class="recipe-display-window hidden">
+                <div class="recipe-title">
+                  <h2>Recipe Name</h2>
+                </div>
+
+                <!-- Image & Video Row -->
+                <div class="image-video-row">
+                  <!-- Recipe Image -->
+                  <div class="recipe-image">
+                    <img src="./img/french-omelete.jpeg" />
+                  </div>
+
+                  <!-- Video -->
+                  <div class="recipe-video">
+                    <iframe
+                      width="400"
+                      height="300"
+                      src="https://www.youtube.com/embed/qXPhVYpQLPA"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+
+                <!-- Recipe Ingredients & Instructions Section -->
+                <div class="ingredients-instructions-row">
+                  <!-- Ingredients -->
+                  <div class="recipe-ingredients-wrapper">
+                    <div class="ingredients-title"><h5>Ingredients</h5></div>
+                    <div class="ingredients-container">
+                      <!-- Eggs -->
+                      <div class="ingredient-wrapper">
+                        <div class="ingredient-image">
+                          <img src="./img/egg.png" />
+                        </div>
+                        <div class="ingredient-text">
+                          <h6>3 Eggs</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Instructions -->
+                  <div class="recipe-instructions-wrapper">
+                    <div class="instructions-title"><h5>Instructions</h5></div>
+                    <div class="instructions-text">
+                      <p>Get everything ready.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about-us-section">
+      <div class="about-us-container">
+        <div class="section-heading">About Us</div>
+        <div class="section-subheading">
+          <h3>Meet Our Team</h3>
+        </div>
+        <!-- Team -->
+        <div class="team-cards">
+          <!-- Card 1  -->
+          <div class="team-member-card card-1">
+            <div class="team-member-image">
+              <img src="./img/team-1.png" />
+            </div>
+            <div class="team-member-card-text">
+              <h2>Andren Willium</h2>
+              <p>CEO</p>
+              <div class="phone-info">
+                <i class="fa-solid fa-phone"></i>
+                <p>+123 699 7700</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="team-member-card card-2">
+            <div class="team-member-image">
+              <img src="./img/team-2.png" />
+            </div>
+            <div class="team-member-card-text">
+              <h2>Claire Merlot</h2>
+              <p>Recipe Developer</p>
+              <div class="phone-info">
+                <i class="fa-solid fa-phone"></i>
+                <p>+123 699 7700</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3  -->
+          <div class="team-member-card card-3">
+            <div class="team-member-image">
+              <img src="./img/team-3.png" />
+            </div>
+            <div class="team-member-card-text">
+              <h2>Jerome Watson</h2>
+              <p>Software Engineer</p>
+              <div class="phone-info">
+                <i class="fa-solid fa-phone"></i>
+                <p>+123 699 7700</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4  -->
+          <div class="team-member-card card-4">
+            <div class="team-member-image">
+              <img src="./img/team-4.png" />
+            </div>
+            <div class="team-member-card-text">
+              <h2>Sarah Boysen</h2>
+              <p>Designer</p>
+              <div class="phone-info">
+                <i class="fa-solid fa-phone"></i>
+                <p>+123 699 7700</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript Script -->
+    <script src="script.js"></script>
+  </body>
+
+  <footer>
+    <div class="footer-primary-wrapper">
+      <div class="footer-column-1">
+        <div class="nav-logo">
+          <img
+            src="./img/cooking-logo.svg"
+            alt="Ready Set Cook logo"
+            class="nav-img"
+          />
+          <a href="https://www.themealdb.com/" target="_blank" class="logo-text"
+            >Ready Set Cook</a
+          >
+        </div>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Exercitationem molestiae harum architecto quidem! Animi eius tenetur,
+          doloribus ut dolor sunt illum alias officia iure, harum a, aut
+          doloremque atque libero!
+        </p>
+        <div class="footer-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-solid fa-headset"></i>
+        </div>
+      </div>
+      <div class="footer-column-2">
+        <h5>Quick Links</h5>
+        <div class="column-line"></div>
+        <ul>
+          <li><a href="#home-section">Home</a></li>
+          <li><a href="#what-we-do-section">What We Do</a></li>
+          <li><a href="#recipes-section">Recipes</a></li>
+          <li><a href="#about-us-section">What We Do</a></li>
+        </ul>
+      </div>
+      <div class="footer-column-3">
+        <h5>Instagram</h5>
+        <div class="column-line"></div>
+        <div class="instagram-row-1">
+          <img src="./img/instagram-1.avif" />
+          <img src="./img/instagram-2.png" />
+          <img src="./img/instagram-3.png" />
+        </div>
+        <div class="instagram-row-2">
+          <img src="./img/instagram-4.png" />
+          <img src="./img/instagram-5.png" />
+          <img src="./img/instagram-6.png" />
+        </div>
+      </div>
+      <div class="footer-column-4">
+        <h5>Contact</h5>
+        <div class="column-line"></div>
+        <div class="contact-line">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>
+            123 Chef Lane <br />
+            Minneapolis, MN 55454
+          </p>
+        </div>
+        <div class="contact-line">
+          <i class="fa-solid fa-envelope"></i>
+          <p>info@example.com</p>
+        </div>
+        <div class="contact-line">
+          <i class="fa-solid fa-phone"></i>
+          <p>(+123) 596 000</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
